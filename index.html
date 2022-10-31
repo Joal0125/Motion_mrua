@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Movimiento rectilineo</title>
+		<link href="style.css" rel="stylesheet" type="text/css" />
+		<script
+			id="MathJax-script"
+			async
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+		></script>
+	</head>
+
+	<body>
+		<canvas id="myCanvas" width="620" height="260"></canvas>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="script.js"></script>
+		<center>
+			&nbsp;
+			<div id="buttons">
+				<input type="button" id="play" value="Activar" onclick="play()" />
+				&nbsp;
+				<input type="button" id="pause" value="Pausar" onclick="pause()" />
+				&nbsp;
+				<input
+					type="button"
+					id="stepback"
+					value="<< Un paso"
+					onclick="stepBack()"
+				/>
+				&nbsp;
+				<input
+					type="button"
+					id="stepforward"
+					value="Un paso >>"
+					onclick="stepForward()"
+				/>
+				<input type="button" id="reset" value="Reiniciar" onclick="reset()" />
+				&nbsp;
+			</div>
+			<br />
+
+			<div>Círculo rojo 1, valor inicial</div>
+			<div id="x1slider">
+				Posición: 0 m
+				<input
+					type="range"
+					id="initialx1"
+					min="0"
+					max="30"
+					value="0"
+					step="1"
+					oninput="showx1Value(this.value)"
+					onchange="showx1Value(this.value)"
+				/>
+				+30 m &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+				<div id="initialx1Value">0</div>
+			</div>
+
+			<div id="v1slider">
+				Velocidad: 0 m/s
+				<input
+					type="range"
+					id="initialv1"
+					min="0"
+					max="10"
+					value="5"
+					step="1"
+					oninput="showv1Value(this.value)"
+					onchange="showv1Value(this.value)"
+				/>
+				10 m/s &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+				<div id="initialv1Value">5</div>
+			</div>
+
+			<div id="a1slider">
+				Acceleración: -2 m/s/s
+				<input
+					type="range"
+					id="initiala1"
+					min="0"
+					max="4"
+					value="2"
+					step="0.1"
+					oninput="showa1Value(this.value)"
+					onchange="showa1Value(this.value)"
+				/>
+				2 m/s/s &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+				&nbsp; &nbsp;
+				<div id="initiala1Value">0.0</div>
+			</div>
+			<br />
+
+			<div>Círculo azul (2), valor inicial</div>
+			<div id="x2slider">
+				Posición: 0 m
+				<input
+					type="range"
+					id="initialx2"
+					min="0"
+					max="30"
+					value="0"
+					step="1"
+					oninput="showx2Value(this.value)"
+					onchange="showx2Value(this.value)"
+				/>
+				+30 m &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+				<div id="initialx2Value">0</div>
+			</div>
+			<div id="v2slider">
+				Velocidad: 0 m/s
+				<input
+					type="range"
+					id="initialv2"
+					min="0"
+					max="10"
+					value="5"
+					step="1"
+					oninput="showv2Value(this.value)"
+					onchange="showv2Value(this.value)"
+				/>
+				10 m/s &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+				<div id="initialv2Value">5</div>
+			</div>
+			<div id="a2slider">
+				Acceleración: -2 m/s/s
+				<input
+					type="range"
+					id="initiala2"
+					min="0"
+					max="4"
+					value="2"
+					step="0.1"
+					oninput="showa2Value(this.value)"
+					onchange="showa2Value(this.value)"
+				/>
+				2 m/s/s &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+				&nbsp; &nbsp;
+				<div id="initiala2Value">0.0</div>
+			</div>
+		</center>
+		<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
+			><img
+				alt="Creative Commons License"
+				style="border-width: 0"
+				src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a
+		><br />Este
+		<span
+			xmlns:dct="http://purl.org/dc/terms/"
+			href="http://purl.org/dc/dcmitype/InteractiveResource"
+			rel="dct:type"
+			>trabajo</span
+		>
+		fue realizado por
+		<span
+			xmlns:cc="http://creativecommons.org/ns#"
+			property="cc:attributionName"
+			>Jorge Tapias</span
+		>
+		bajo licencia
+		<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
+			>Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
+			License</a
+		>.<br />Esta simulación es una modificación del original encontrado en
+		<a
+			xmlns:dct="http://purl.org/dc/terms/"
+			href="http://physics.bu.edu/~duffy/classroom.html"
+			rel="dct:source"
+			>http://physics.bu.edu/~duffy/classroom.html</a
+		>.
+	</body>
+</html>
