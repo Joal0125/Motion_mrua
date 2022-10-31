@@ -14,3 +14,9 @@ body {
 	border: 1px solid black;
 	position: relative;
 }
+#buttons {
+	padding: 7px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
